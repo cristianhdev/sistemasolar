@@ -543,7 +543,7 @@ let divTextosPlanetas = [
                 <source src="${videosPlanetasRuta[8]}" type="video/mp4">
             </video>
         </div>
-        <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xs">
+        <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xs xs:text-xs">
             <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Neptuno</div>
             <hr>
             <p><span class="font-bold">Tamaño (diámetro):</span> 49,528 km</p>

@@ -915,7 +915,7 @@ function init() {
             opacity: 1, scaleX: 1, scaleY: 1, duration: 0.5, ease: Linear.easeInOut, stagger: 0.2, onComplete: () => {
                 document.querySelector('.contenedor-actividad').innerHTML = `
                 <div id="instrucciones">
-    <div class=" h-fit w-90 md:w-fit sm:h-fit md:h-fit sm:w-[100vw] mx-auto sm:mx-auto  md:overflow lg:p-20 md:overflow-auto md:p-2 sm:p-2">
+    <div class=" h-fit w-90 md:w-fit sm:h-fit md:h-fit sm:w-[100vw] mx-auto sm:mx-auto  md:overflow lg:p-20 md:overflow-hidden md:p-2 sm:p-2">
       <h1 class="text-2xl lg:text-2xl  md:text-2xl sm:text-xs text-cyan-900 mb-4">INSTRUCCIONES</h1>
       <hr class=" w-20 mx-auto mb-3">
       <p class="text-justify text-base lg:text-lg md:text-sm sm:text-xs">Vamos a explorar nuestro sistema solar y nuestro planeta tierra, Haz clic en cualquiera de los planetas que se encuentrar en la parte inferior para ingresar a su ficha descriptiva. Puedes seleccionar también los botones de tamaño y distancia para conocer más sobre estos temas.</p>

@@ -1045,6 +1045,7 @@ function MostrarInfoLuna(){
 
 function cerrarSimuladorOpcion() {
     document.querySelector('.simulador-seleccion').style.display = 'none'
+    changeView=false
     ReiniciarGalaxia()
 }
 

@@ -537,7 +537,7 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Neptuno -->
   
     <div id="Neptuno" >
-        <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+        <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
         <div class="NeptunoVideo animate__animated animate__fadeIn">
             <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
                 <source src="${videosPlanetasRuta[8]}" type="video/mp4">

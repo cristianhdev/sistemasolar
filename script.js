@@ -47,7 +47,7 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Sol -->
   
 <div id="Sol" >
-    <div class="informacion-completa  w-[100%] h-auto lg:h-auto md:h-60 sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] h-auto lg:h-auto md:h-60 sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="SolVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[0]}" type="video/mp4">
@@ -915,10 +915,10 @@ function init() {
             opacity: 1, scaleX: 1, scaleY: 1, duration: 0.5, ease: Linear.easeInOut, stagger: 0.2, onComplete: () => {
                 document.querySelector('.contenedor-actividad').innerHTML = `
                 <div id="instrucciones">
-    <div class=" h-fit w-90 md:w-fit sm:h-fit md:h-fit sm:w-[100vw] mx-auto  md:overflow lg:p-20 md:overflow-hidden md:p-2 sm:p-2">
-      <h1 class="text-2xl lg:text-2xl md:text-2xl sm:text-lg text-cyan-900 mb-4">INSTRUCCIONES</h1>
+    <div class=" h-fit w-90 md:w-fit sm:h-fit md:h-fit sm:w-[100vw] mx-auto sm:mx-auto  md:overflow lg:p-20 md:overflow-hidden md:p-2 sm:p-2">
+      <h1 class="text-2xl lg:text-2xl  md:text-2xl sm:text-lg text-cyan-900 mb-4">INSTRUCCIONES</h1>
       <hr class=" w-20 mx-auto mb-3">
-      <p class="text-justify text-base lg:text-lg md:text-lg sm:text-2xl">Vamos a explorar nuestro sistema solar y nuestro planeta tierra, Haz clic en cualquiera de los planetas que se encuentrar en la parte inferior para ingresar a su ficha descriptiva. Puedes seleccionar también los botones de tamaño y distancia para conocer más sobre estos temas.</p>
+      <p class="text-justify text-base lg:text-lg md:text-lg sm:text-xs">Vamos a explorar nuestro sistema solar y nuestro planeta tierra, Haz clic en cualquiera de los planetas que se encuentrar en la parte inferior para ingresar a su ficha descriptiva. Puedes seleccionar también los botones de tamaño y distancia para conocer más sobre estos temas.</p>
       <div class="w-40  mx-auto   mt-20 md:mt-6">
         <div
           class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg lg:text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer hover:transform-scale-1"

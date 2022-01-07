@@ -292,11 +292,11 @@ h6 {
   
   /* CSS */
   #navbar {
-    font-size: 1em !important;
+    font-size: 1.2em !important;
   }
   #data a{
     padding:6px !important;
-    font-size: 1em !important;
+    font-size: 1.2em !important;
   }
   .contendor-video{
     display:none

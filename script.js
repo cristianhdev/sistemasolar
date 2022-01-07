@@ -86,7 +86,7 @@ let divTextosPlanetas = [
 </div>
 <div class="w-[100%] h-full">
     <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 active:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','informacion-completa')">Información</div>
                 <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','tamano')">Tamaño</div>
                 <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','orbita')">Órbita</div>-->
                 <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','sabias')">¿Sabias Que?</div>

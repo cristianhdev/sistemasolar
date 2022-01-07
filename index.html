@@ -2,198 +2,263 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Solar</title>
- <!--    <link rel="stylesheet" type="text/css" href="node_modules/animate.css/animate.min.css"> -->
-    <link rel="preload" href="styles.css" as="styles">
-    <link rel="preload" href="script.js" as="script">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="./style-sistema.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <link rel="stylesheet" href="./src/animate.min.css">
-    <script src="./src/gsap.min.js" type="text/javascript"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Solar</title>
+  <!--    <link rel="stylesheet" type="text/css" href="node_modules/animate.css/animate.min.css"> -->
+  <link rel="preload" href="styles.css" as="styles">
+  <link rel="preload" href="script.js" as="script">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="./style-sistema.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link rel="stylesheet" href="./src/animate.min.css">
+  <script src="./src/gsap.min.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* you can pass in options here */
+    var PleaseRotateOptions = {
+      startOnPageLoad: true,
+      onHide: function () { },
+      onShow: function () { },
+      forcePortrait: false,
+      message: "Por favor gira el dispositivo para realizar la actividad.",
+      subMessage: "",
+      allowClickBypass: false,
+      onlyMobile: true,
+      zIndex: 9999999,
+      iconNode: null
+    };
+  </script>
+  
+  
+  
+  <script src="./src/pleaserotate.min.js"></script>
 </head>
 
 <body onload="init()" class="opening hide-UI view-2D zoom-large data-close controls-close">
-    <div style="position: absolute;top: 0px;z-index: 1;">
-        <img src="./assets/Img/logo.png" alt="logo: escuela nueva">
+  <div style="position: absolute;top: 0px;z-index: 1;">
+    <img src="./assets/Img/logo.png" alt="logo: escuela nueva">
+  </div>
+  <div class="simulador-seleccion absolute top-21 left-[25%] z-[9999999]">
+    <div class="flex flex-row">
+      <div>
+        <p class="text-base text-white">Velocidad de translacion de los planetas: &nbsp; </p>
+      </div>
+      <div>
+        <select name="select-velocidad" class="text-base" id="velociad-translacion">
+          <option value="0">Seleccione</option>
+          <option value="1">1 año terrestre por segundo</option>
+          <option value="2">30 días terrestre por segundo</option>
+          <option value="3">15 dias terrestre por segundo</option>
+          <option value="4">5 días terrestres por segundo</option>
+          <option value="5">Un día terrestre por segundo</option>
+          <option value="6">Un día terrestre cada 5 segundos</option>
+          <option value="7">Un día terrestre cada 10 segundos</option>
+        </select>
+      </div>
+      <div
+        class="w-10 h-fit text-white text-lg flex justify-center items-center content-center text-center text-bold pl-1 cursor-pointer"
+        onclick="cerrarSimuladorOpcion()">
+        X
+      </div>
+
     </div>
-    <div id="navbar">
-        <a id="toggle-data" href="#data"><i class="icon-data"></i>Planetas</a>
-        <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>Controles</a>
-      </div>
-      <div id="data">
-        <a class="sun" title="sun" href="#sunspeed" onclick="mostrarContenido(0)">Sol</a>
-        <a class="mercury" title="mercury" href="#mercuryspeed" onclick="mostrarContenido(1)">Mercurio</a>
-        <a class="venus" title="venus" href="#venusspeed" onclick="mostrarContenido(2)">Venus</a>
-        <a class="earth active" title="earth" href="#earthspeed" onclick="mostrarContenido(3)">Tierra</a>
-        <a class="mars" title="mars" href="#marsspeed" onclick="mostrarContenido(4)">Marte</a>
-        <a class="jupiter" title="jupiter" href="#jupiterspeed" onclick="mostrarContenido(5)">Jupiter</a>
-        <a class="saturn" title="saturn" href="#saturnspeed" onclick="mostrarContenido(6)">Saturno</a>
-        <a class="uranus" title="uranus" href="#uranusspeed" onclick="mostrarContenido(7)">Urano</a>
-        <a class="neptune" title="neptune" href="#neptunespeed" onclick="mostrarContenido(8)">Neptuno</a>
-      </div>
-      <div id="controls">
-        <label class="set-view">
-          <input type="checkbox">
-        </label>
-        <label class="set-zoom">
-          <input type="checkbox">
-        </label>
-        <label>
-          <input type="radio" class="set-speed" name="scale" checked>
-          <span>Velocidad</span>
-        </label>
-        <label>
-          <input type="radio" class="set-size" name="scale">
-          <span>Tamaño</span>
-        </label>
-        <label>
-          <input type="radio" class="set-distance" name="scale">
-          <span>Distancia</span>
-        </label>
-      </div>
-      <div id="universe" class="scale-stretched">
-        <div id="galaxy">
-          <div id="solar-system" class="earth">
-            <div id="mercury" class="orbit">
-              <div class="pos">
-                <div class="planet">
-                  <dl class="infos">
-                    <dt>Mercurio</dt>
-                    <dd><span></span></dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div id="venus" class="orbit">
-              <div class="pos">
-                <div class="planet">
-                  <dl class="infos">
-                    <dt>Venus</dt>
-                    <dd><span></span></dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div id="earth" class="orbit">
-              <div class="pos">
-                <div class="orbit">
-                  <div class="pos">
-                    <div class="moon"></div>
-                  </div>
-                </div>
-                <div class="planet">
-                  <dl class="infos">
-                    <dt>Tierra</dt>
-                    <dd><span></span></dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div id="mars" class="orbit">
-              <div class="pos">
-                <div class="planet">
-                  <dl class="infos">
-                    <dt>Marte</dt>
-                    <dd><span></span></dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div id="jupiter" class="orbit">
-              <div class="pos">
-                <div class="planet">
-                  <dl class="infos">
-                    <dt>Jupiter</dt>
-                    <dd><span></span></dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div id="saturn" class="orbit">
-              <div class="pos">
-                <div class="planet">
-                  <div class="ring"></div>
-                  <dl class="infos">
-                    <dt>Saturno</dt>
-                    <dd><span></span></dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div id="uranus" class="orbit">
-              <div class="pos">
-                <div class="planet">
-                  <dl class="infos">
-                    <dt>Urano</dt>
-                    <dd><span></span></dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div id="neptune" class="orbit">
-              <div class="pos">
-                <div class="planet">
-                  <dl class="infos">
-                    <dt>Nepturno</dt>
-                    <dd><span></span></dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-            <div id="sun"  onclick="mostrarContenido(0)">
+  </div>
+  <div id="navbar" class="sm:text-sm">
+    <a id="toggle-data" href="#data"><i class="icon-data"></i>Planetas</a>
+    <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>Controles</a>
+  </div>
+  <div id="data" class="animate__animated animate__fadeInUp hidden">
+    <a class="sun" title="sun" href="#sunspeed" onclick="mostrarContenido(0)">Sol</a>
+    <a class="mercury" title="mercury" href="#mercuryspeed" onclick="mostrarContenido(1)">Mercurio</a>
+    <a class="venus" title="venus" href="#venusspeed" onclick="mostrarContenido(2)">Venus</a>
+    <a class="earth active" title="earth" href="#earthspeed" onclick="mostrarContenido(3)">Tierra</a>
+    <a class="mars" title="mars" href="#marsspeed" onclick="mostrarContenido(4)">Marte</a>
+    <a class="jupiter" title="jupiter" href="#jupiterspeed" onclick="mostrarContenido(5)">Jupiter</a>
+    <a class="saturn" title="saturn" href="#saturnspeed" onclick="mostrarContenido(6)">Saturno</a>
+    <a class="uranus" title="uranus" href="#uranusspeed" onclick="mostrarContenido(7)">Urano</a>
+    <a class="neptune" title="neptune" href="#neptunespeed" onclick="mostrarContenido(8)">Neptuno</a>
+    <a class="neptune" id="simulador" title="simulador" href="#simulador">Simulador</a>
+  </div>
+  <div id="controls">
+    <label class="set-view">
+      <input type="checkbox">
+    </label>
+    <label class="set-zoom">
+      <input type="checkbox">
+    </label>
+    <label>
+      <input type="radio" class="set-speed" name="scale" checked>
+      <span>Velocidad</span>
+    </label>
+    <label>
+      <input type="radio" class="set-size" name="scale">
+      <span>Tamaño</span>
+    </label>
+    <label>
+      <input type="radio" class="set-distance" name="scale">
+      <span>Distancia</span>
+    </label>
+  </div>
+  <div id="universe" class="scale-stretched">
+    <div id="galaxy">
+      <div id="solar-system" class="earth">
+        <div id="mercury" class="orbit">
+          <div class="pos">
+            <div class="planet">
               <dl class="infos">
-                <dt>Sol</dt>
+                <dt>Mercurio</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="venus" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt>Venus</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="earth" class="orbit">
+          <div class="pos">
+            <div class="orbit">
+              <div class="pos">
+                <div class="moon"></div>
+              </div>
+            </div>
+            <div class="planet">
+              <dl class="infos">
+                <dt>Tierra</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="mars" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt>Marte</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="jupiter" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt>Jupiter</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="saturn" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <div class="ring"></div>
+              <dl class="infos">
+                <dt>Saturno</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="uranus" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt>Urano</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="neptune" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt>Nepturno</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="sun" onclick="mostrarContenido(0)">
+          <dl class="infos">
+            <dt>Sol</dt>
+            <dd><span></span></dd>
+          </dl>
+        </div>
+        <div id="simulador" class="orbit">
+          <div class="pos">
+            <div class="planet">
+              <dl class="infos">
+                <dt>Simulador</dt>
                 <dd><span></span></dd>
               </dl>
             </div>
           </div>
         </div>
       </div>
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-           <!--  <span class="close">&times;</span> -->
-            <div >
-                <video  id="video-animacion-mobile" class="responsive"  preload controls>
-                    <source src="./assets/videos/entrevista_01.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div style="width:50%;">
-                <div class="button" onclick="OcultarVideo()">
-                    Cerrar Video 
-                </div>
-                <!-- <img src="./assets/img/play-circle.svg"> -->
-            </div>
-        </div>
-
     </div>
-    <div class="contendor-bienvenida">
-        <div class="contenido-actividad-bienvenida z-[999999] hidden overflow-auto lg:overflow-hidden">
-            <div class="w-10 h-10 z-[999999] bg-white bg-transparent absolute top-[1vh] right-[3vh]  cursor-pointer text-3xl cursor-pointer text-center hover:text-blue-800" onclick="ocultarVentana()">
-                x
-            </div>
-            <div class="contenedor-actividad">
-                
-            </div>
+  </div>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <!--  <span class="close">&times;</span> -->
+      <div style="width:80%;">
+        <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg lg:text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer hover:transform-scale-1" onclick="OcultarVideo()">
+          Cerrar Video
         </div>
+        <!-- <img src="./assets/img/play-circle.svg"> -->
+      </div>
+      <div class="w-[45vw] h-fit mt-10 mb-5">
+        <video id="video-animacion-mobile" preload controls>
+          <source src="./assets/videos/origen_sist_solar.mp4" type="video/mp4">
+          <source src="./assets/videos/origen_sist_solar.ogg" type="video/ogg">
+        </video>
+      </div>
+      
     </div>
+
+  </div>
+  <div class="contendor-bienvenida">
+    <div class="contenido-actividad-bienvenida z-[999999] hidden overflow-hidden md:overflow-auto lg:overflow-hidden">
+      <div
+        class="w-10 h-10 z-[999999] bg-white bg-transparent absolute top-[1vh] right-[3vh]  cursor-pointer text-3xl text-center hover:text-blue-800"
+        onclick="ocultarVentana()">
+        x
+      </div>
+      <div class="contenedor-actividad">
+
+      </div>
+    </div>
+  </div>
+
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script type="text/javascript">
-    if (typeof jQuery == 'undefined') { 
-      document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
-    }
+      if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+      }
     </script>
     <script src="js/prefixfree.min.js"></script>
     <script src="js/scripts.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 <!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script-sistema.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="./script-sistema.js"></script>
+  
+
+
 
 </html>

@@ -65,9 +65,22 @@
 
     </div>
   </div>
-  <div id="navbar" class="sm:text-sm">
-    <a id="toggle-data" href="#data"><i class="icon-data"></i>Planetas</a>
+  <div id="navbar" class="sm:text-sm hidden">
+    <!-- <a id="toggle-data" href="#data"><i class="icon-data"></i>Planetas</a> -->
+    <div class="flex justify-evenly items-center content-center">
+      <a class="sun" title="sun" href="#sunspeed" onclick="mostrarContenido(0)">Sol</a>
+      <a class="mercury" title="mercury" href="#mercuryspeed" onclick="mostrarContenido(1)">Mercurio</a>
+      <a class="venus" title="venus" href="#venusspeed" onclick="mostrarContenido(2)">Venus</a>
+      <a class="earth active" title="earth" href="#earthspeed" onclick="mostrarContenido(3)">Tierra</a>
+      <a class="mars" title="mars" href="#marsspeed" onclick="mostrarContenido(4)">Marte</a>
+      <a class="jupiter" title="jupiter" href="#jupiterspeed" onclick="mostrarContenido(5)">Jupiter</a>
+      <a class="saturn" title="saturn" href="#saturnspeed" onclick="mostrarContenido(6)">Saturno</a>
+      <a class="uranus" title="uranus" href="#uranusspeed" onclick="mostrarContenido(7)">Urano</a>
+      <a class="neptune" title="neptune" href="#neptunespeed" onclick="mostrarContenido(8)">Neptuno</a>
+      <a class="neptune" id="simulador" title="simulador" href="#simulador">Simulador</a>
     <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>Controles</a>
+    </div>
+   
   </div>
   <div id="data" class="animate__animated animate__fadeInUp hidden">
     <a class="sun" title="sun" href="#sunspeed" onclick="mostrarContenido(0)">Sol</a>
@@ -231,7 +244,7 @@
 
   </div>
   <div class="contendor-bienvenida">
-    <div class="contenido-actividad-bienvenida z-[999999] hidden overflow-hidden md:overflow-auto lg:overflow-hidden">
+    <div class="contenido-actividad-bienvenida z-[999999] hidden overflow-hidden md:overflow-auto lg:overflow-hidden sm:overflow-scroll">
       <div
         class="w-10 h-10 z-[999999] bg-white bg-transparent absolute top-[1vh] right-[3vh]  cursor-pointer text-3xl text-center hover:text-blue-800"
         onclick="ocultarVentana()">

@@ -71,7 +71,7 @@ ol {
 }
 
 .contenido-actividad-bienvenida {
-  border: 13px #2f92d8 double;
+  border: 7px #2f92d8 double;
   border-radius: 28px 28px;
   width: 70%;
   height: 78%;
@@ -310,9 +310,10 @@ h6 {
     height: fit-content;
   }
 
-  .informacion {
-    font-size: 0.8em !important;
+  .contenido-actividad-bienvenida{
+    height:81%
   }
+  
 }
 
 /* 
@@ -341,8 +342,8 @@ h6 {
     height: fit-content;
   }
 
-  .informacion {
-    font-size: 0.8em
+  .contenido-actividad-bienvenida{
+    height:81%
   }
 
 }

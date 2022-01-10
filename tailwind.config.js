@@ -1,22 +1,11 @@
 module.exports = {
-    theme: {
-      screens: {
-        'xm': '320px',
-        // => @media (min-width: 640px) { ... }
-        'sm': '640px',
-        // => @media (min-width: 640px) { ... }
-  
-        'md': '768px',
-        // => @media (min-width: 768px) { ... }
-  
-        'lg': '1024px',
-        // => @media (min-width: 1024px) { ... }
-  
-        'xl': '1280px',
-        // => @media (min-width: 1280px) { ... }
-  
-        '2xl': '1536px',
-        // => @media (min-width: 1536px) { ... }
-      }
-    }
+  theme: {
+    screens: {
+      'xs': { 'min': '320px', 'max': '480px' },
+      'sm': { 'min': '481px', 'max': '767px' },
+      'md': { 'min': '768px', 'max': '1024px' },
+      'lg': { 'min': '1025px', 'max': '1280px' },
+      'xlg': { 'min': '1281px' }
+    },
   }
+}

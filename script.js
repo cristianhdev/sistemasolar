@@ -40,20 +40,20 @@ let ImagenesPlanetaOrbita = [
 let videoInicio = null
 let videoInicioMobile = null
 
-let changeView=true;
+let changeView = true;
 
 
 let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Sol -->
   
 <div id="Sol" >
-    <div class="informacion-completa  w-[100%] h-auto lg:h-auto md:h-60 sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="SolVideo animate__animated animate__fadeIn">
-        <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
+        <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto sm:h-fit xs:h-fit"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[0]}" type="video/mp4">
         </video>
     </div>
-    <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 w-[100%] h-[54vh] text-lg lg:text-base md:text-sm">
+    <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 sm:p-2 w-[100%] h-[54vh] sm:h-fit text-lg lg:text-base md:text-base sm:text-sm xs:text-sm">
         <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Sol</div>
         <hr>
         <p><span class="font-bold">Tamaño (diámetro):</span> 1,400,000 km</p>
@@ -62,17 +62,17 @@ let divTextosPlanetas = [
         <p><span class="font-bold">Superficie:</span> Gaseosa, extremadamente caliente.</p>
     </div>
     </div>
-    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
-        <img src="${ImagenesPlanetaSizes[0]}" class="md:h-[45vh] mx-auto" alt="tamano">
+    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh]  lg:h-[54vh] sm:h-fit  flex flex-col items-center content-center justify-start">
+        <img src="${ImagenesPlanetaSizes[0]}" class="md:h-[45vh] sm:h-40 mx-auto" alt="tamano">
     </div>
-    <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
+    <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[0]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-center  text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Tierra</div>-->
         <hr>
         
-        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center ">
+        <div class="w-[50vw] h-80 sm:h-fit mx-auto text-left flex flex-col items-center content-center justify-center sm:h-fit   ">
              <p><span class="text-red-900 font-extrabold ">¿SABIAS QUE?</span></p>
             <ul class="list-disc">
             <li><p>El Sol es una estrella.</p></li>
@@ -85,11 +85,11 @@ let divTextosPlanetas = [
     
 </div>
 <div class="w-[100%] h-full">
-    <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 active:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','informacion-completa')">Información</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','tamano')">Tamaño</div>
-                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','orbita')">Órbita</div>-->
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','sabias')">¿Sabias Que?</div>
+    <div class="w-[100%] h-full p-8  md:p-5 sm:p-2 nowrap flex flex-row  gap-2 items-center justify-between content-center">
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 active:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-xs xs:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-xs xs:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','tamano')">Tamaño</div>
+                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-xs xs:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','orbita')">Órbita</div>-->
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-xs xs:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Sol','sabias')">¿Sabias Que?</div>
     </div>
     </div>
 </div>
@@ -97,13 +97,13 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Mercurio -->
   
 <div id="Mercurio" >
-    <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="MercurioVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[1]}" type="video/mp4">
         </video>
     </div>
-    <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xs">
+    <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 lg:p-8 sm:p-2 lg:w-full md:h-[54vh] text-lg lg:text-base md:text-xs sm:text-xs">
         <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Mercurio</div>
         <hr>
         <p><span class="font-bold">Tamaño (diámetro):</span> 4,878 km</p>
@@ -117,17 +117,17 @@ let divTextosPlanetas = [
         <p><span class="font-bold">Superficie:</span> Solida, con cambios extremos de temperatura.</p>
     </div>
     </div>
-    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
-        <img src="${ImagenesPlanetaSizes[1]}" class="md:h-[45vh] mx-auto"  alt="tamano">
+    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] lg:h-[54vh]  sm:h-fit flex flex-col items-center content-center justify-start">
+        <img src="${ImagenesPlanetaSizes[1]}" class="md:h-[45vh] sm:h-40 mx-auto"  alt="tamano">
     </div>
-    <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
+    <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh]  lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[1]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Tierra</div>-->
         <hr>
         
-        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center ">
+        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center  sm:h-fit  ">
              <p><span class="text-red-900 font-extrabold ">¿SABIAS QUE?</span></p>
             <ul class="list-disc">
             <li><p>Mercurio se parece a la luna porque está lleno de crateres.</p></li>
@@ -142,11 +142,11 @@ let divTextosPlanetas = [
     
 </div>
 <div class="w-[100%] h-full">
-    <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Mercurio','informacion-completa')">Información</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Mercurio','tamano')">Tamaño</div>
-                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Mercurio','orbita')">Órbita</div>-->
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Mercurio','sabias')">¿Sabias Que?</div>
+    <div class="w-[100%] h-full p-8 lg:p-8 md:p-8 sm:p-2 nowrap flex flex-row  gap-2 items-center justify-between content-center">
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Mercurio','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Mercurio','tamano')">Tamaño</div>
+                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Mercurio','orbita')">Órbita</div>-->
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Mercurio','sabias')">¿Sabias Que?</div>
     </div>
     </div>
 </div>
@@ -154,13 +154,13 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Venus -->
   
 <div id="Venus" >
-    <div class="informacion-completa  w-[100%] lg:h-auto md:h-[65vh] grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="VenusVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[2]}" type="video/mp4">
         </video>
     </div>
-    <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 w-[100%]  lg:w-full md:h-[54vh] text-lg lg:text-base md:text-xs sm:text-xs">
+    <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 sm:p-2 w-[100%]  lg:w-full md:h-[54vh] text-lg lg:text-base md:text-xs sm:text-xs">
         <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Venus</div>
         <hr>
         <p><span class="font-bold">Tamaño (diámetro):</span> 12,100 km</p>
@@ -174,17 +174,17 @@ let divTextosPlanetas = [
         <p><span class="font-bold">Superficie:</span> Sólida, con densa capa de nubes de dióxido de carbono y partículas de azufre que atrapa el calor del Sol y no lo deja escapar, creando un efecto invernadero.</p>
     </div>
     </div>
-    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] lg:h-[54vh] md:h-[40vh] flex flex-col items-center content-center justify-start">
-        <img src="${ImagenesPlanetaSizes[2]}" class="md:h-[45vh] mx-auto" alt="tamano">
+    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh]  lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
+        <img src="${ImagenesPlanetaSizes[2]}" class="md:h-[45vh] sm:h-40 mx-auto" alt="tamano">
     </div>
-    <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
+    <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh]  lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[2]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] sm:h-fit flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Tierra</div>-->
         <hr>
         
-        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center ">
+        <div class="w-[50vw] h-80 mx-auto text-left lg: md:text-lg md:text-base  sm:text-xs xs:text-xs flex flex-col items-center content-center justify-center sm:h-fit ">
              <p><span class="text-red-900 font-extrabold ">¿SABIAS QUE?</span></p>
             <ul class="list-disc">
             <li><p>Venus es el planeta más caliente del Sistema Solar.</p></li>
@@ -197,11 +197,11 @@ let divTextosPlanetas = [
     
 </div>
 <div class="w-[100%] h-full">
-    <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Venus','informacion-completa')">Información</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Venus','tamano')">Tamaño</div>
-                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Venus','orbita')">Órbita</div>-->
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Venus','sabias')">¿Sabias Que?</div>
+    <div class="w-[100%] h-full p-8 md:p-8 sm:p-2 nowrap flex flex-row  gap-2 items-center justify-between content-center">
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm xs:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Venus','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm xs:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Venus','tamano')">Tamaño</div>
+                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm xs:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Venus','orbita')">Órbita</div>-->
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm xs:text-xs text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Venus','sabias')">¿Sabias Que?</div>
     </div>
     </div>
 </div>
@@ -209,13 +209,13 @@ let divTextosPlanetas = [
     `<div id="infoTierra" class="flex flex-col items-center content-center justify-center"><!-- Tierra -->
   
 <div id="Tierra" >
-    <div class="informacion-completa  w-[100%] lg:h-auto md:h-[65vh] grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="TierraVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[3]}" type="video/mp4">
         </video>
     </div>
-    <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 w-[100%]  lg:w-full md:h-[54vh] text-lg lg:text-base md:text-xs sm:text-xs">
+    <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 sm:p-2 w-[100%]  lg:w-full md:h-[54vh] text-lg lg:text-base md:text-xs sm:text-xs">
         <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Tierra</div>
         <hr>
         <p><span class="font-bold">Tamaño (diámetro):</span> 12,755 km</p>
@@ -229,17 +229,17 @@ let divTextosPlanetas = [
         <p><span class="font-bold">Superficie:</span> Sólida, con mares de agua. Por su distancia al Sol se conserva una temperatura en la que hay agua sólida, líquida y gaseosa.</p>
     </div>
     </div>
-    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
-        <img src="${ImagenesPlanetaSizes[3]}" class="md:h-[45vh] mx-auto" alt="tamano">
+    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh]  lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
+        <img src="${ImagenesPlanetaSizes[3]}" class="md:h-[45vh] sm:h-40 mx-auto" alt="tamano">
     </div>
-    <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
+    <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh]  lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[3]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] sm:h-[45vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Tierra</div>-->
         <hr>
         
-        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center ">
+        <div class="w-[50vw] h-80 mx-auto text-left lg: md:text-lg md:text-base  sm:text-xs xs:text-xs flex flex-col items-center content-center justify-center sm:h-fit ">
              <p><span class="text-red-900 font-extrabold ">¿SABIAS QUE?</span></p>
             <ul class="list-disc">
             <li><p>En la superficie del planeta Tierra hay más agua que tierra: 70% contra 30%, por eso se le llama el planeta azul.</p></li>
@@ -252,24 +252,24 @@ let divTextosPlanetas = [
     
 </div>
 <div class="w-[100%] h-full">
-    <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Tierra','informacion-completa')">Información</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Tierra','tamano')">Tamaño</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Tierra','luna')">Luna</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Tierra','sabias')">¿Sabias Que?</div>
+    <div class="w-[100%] h-full p-8 md:p-8 sm:p-2 nowrap flex flex-row  gap-2 items-center justify-between content-center">
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Tierra','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Tierra','tamano')">Tamaño</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Tierra','luna')">Luna</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Tierra','sabias')">¿Sabias Que?</div>
     </div>
     </div>
 </div>
-<div id="luna" class="flex flex-col items-center content-center justify-center "><!-- Luna -->
+<div id="luna" class="flex flex-col items-center content-center justify-center hidden"><!-- Luna -->
   
-<div id="Luna" >
-    <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-1 lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+<div id="Luna" class="hidden">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="LunaVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="./assets/videos/03bluna.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="informacion animate__animated animate__fadeIn grow p-8 w-[100%] h-[54vh] text-lg md:text-base">
+    <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 sm:p-2 w-[100%]  lg:w-full md:h-[54vh] text-lg lg:text-base md:text-xs sm:text-xs">
         <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Luna</div>
         <hr>
         <p><span class="font-bold">Tamaño (diámetro):</span> 3,476 Km</p>
@@ -281,13 +281,13 @@ let divTextosPlanetas = [
         <p><span class="font-bold">Superficie:</span> Sólida, rocosa, llena de cráteres; de temperaturas extremas.</p>
     </div>
     </div>
-    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
-        <img src="./assets/img/sizesPlanetas/Luna.png" class="md:h-[45vh] mx-auto" alt="tamano">
+    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh]  lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
+        <img src="./assets/img/sizesPlanetas/Luna.png" class="md:h-[45vh] sm:h-40 mx-auto" alt="tamano">
     </div>
     <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[3]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] sm:h-[45vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Luna</div>-->
         <hr>
         
@@ -304,11 +304,11 @@ let divTextosPlanetas = [
     
 </div>
 <div class="w-[100%] h-full">
-    <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Luna','informacion-completa')">Información</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Luna','tamano')">Tamaño</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Luna','sabias')">¿Sabias Que?</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="VolverTierra()">Regresar a tierra</div>
+    <div class="w-[100%] h-full p-8 md:p-8 sm:p-2 nowrap flex flex-row  gap-2 items-center justify-between content-center">
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Luna','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Luna','tamano')">Tamaño</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Luna','sabias')">¿Sabias Que?</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="VolverTierra()">Regresar</div>
     </div>
     </div>
 </div>
@@ -317,13 +317,13 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Marte -->
   
 <div id="Marte" >
-    <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="MarteVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[4]}" type="video/mp4">
         </video>
     </div>
-    <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xs">
+    <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 lg:p-8 sm:p-2 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xs">
         <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Marte</div>
         <hr>
         <p><span class="font-bold">Tamaño (diámetro):</span> 6,786 km</p>
@@ -337,17 +337,17 @@ let divTextosPlanetas = [
         <p><span class="font-bold">Superficie:</span> Solida. Desierto lleno de óxido de hierro (de ahi su color rojo) más seco que el Sahara, con vientos constantes.</p>
     </div>
     </div>
-    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
-        <img src="${ImagenesPlanetaSizes[4]}" class="md:h-[45vh] mx-auto" alt="tamano">
+    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
+        <img src="${ImagenesPlanetaSizes[4]}" class="md:h-[45vh] sm:h-40  mx-auto" alt="tamano">
     </div>
     <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[4]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-center  text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Saturno</div>-->
         <hr>
         
-        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center ">
+        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center  sm:h-fit">
              <p><span class="text-red-900 font-extrabold ">¿SABIAS QUE?</span></p>
             <ul class="list-disc">
             <li><p>Marte es un planeta helado.</p></li>
@@ -361,10 +361,10 @@ let divTextosPlanetas = [
 </div>
 <div class="w-[100%] h-full">
     <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Marte','informacion-completa')">Información</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Marte','tamano')">Tamaño</div>
-                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Marte','orbita')">Órbita</div>-->
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Marte','sabias')">¿Sabias Que?</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Marte','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Marte','tamano')">Tamaño</div>
+                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Marte','orbita')">Órbita</div>-->
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Marte','sabias')">¿Sabias Que?</div>
     </div>
     </div>
 </div>
@@ -372,13 +372,13 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Jupiter -->
   
 <div id="Jupiter" >
-    <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="JupiterVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[5]}" type="video/mp4">
         </video>
     </div>
-    <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xs">
+    <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 lg:p-8 sm:p-2 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xs">
         <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Jupiter</div>
         <hr>
         <p><span class="font-bold">Tamaño (diámetro):</span> 139,824 km</p>
@@ -392,17 +392,17 @@ let divTextosPlanetas = [
         <p><span class="font-bold">Superficie:</span> Gaseosa, con veloces vientos.</p>
     </div>
     </div>
-    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
-        <img src="${ImagenesPlanetaSizes[5]}" class="md:h-[45vh] mx-auto" alt="tamano">
+    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
+        <img src="${ImagenesPlanetaSizes[5]}" class="md:h-[45vh] sm:h-40  mx-auto" alt="tamano">
     </div>
     <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[5]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-center  text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Saturno</div>-->
         <hr>
         
-        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center ">
+        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center sm:h-fit ">
              <p><span class="text-red-900 font-extrabold ">¿SABIAS QUE?</span></p>
             <ul class="list-disc">
             <li><p>Júpiter tiene más masa que todos los demás planetas del Sistema Solar juntos.</p></li>
@@ -416,10 +416,10 @@ let divTextosPlanetas = [
 </div>
 <div class="w-[100%] h-full">
     <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Jupiter','informacion-completa')">Información</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Jupiter','tamano')">Tamaño</div>
-                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Jupiter','orbita')">Órbita</div>-->
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Jupiter','sabias')">¿Sabias Que?</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Jupiter','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Jupiter','tamano')">Tamaño</div>
+                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Jupiter','orbita')">Órbita</div>-->
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Jupiter','sabias')">¿Sabias Que?</div>
     </div>
     </div>
 </div>
@@ -427,7 +427,7 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Saturno -->
   
 <div id="Saturno" >
-    <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="SaturnoVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[6]}" type="video/mp4">
@@ -453,7 +453,7 @@ let divTextosPlanetas = [
     <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[6]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-center  text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Saturno</div>-->
         <hr>
         
@@ -482,13 +482,13 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Urano -->
   
 <div id="Urano" >
-    <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+    <div class="informacion-completa  w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
     <div class="UranoVideo animate__animated animate__fadeIn">
         <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
             <source src="${videosPlanetasRuta[7]}" type="video/mp4">
         </video>
     </div>
-    <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xse">
+    <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 sm:p-2 w-[100%] h-[54vh] sm:h-fit text-lg lg:text-base md:text-base sm:text-sm xs:text-sm">
         <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Urano</div>
         <hr>
         <p><span class="font-bold">Tamaño (diámetro):</span> 51,118 km</p>
@@ -502,17 +502,17 @@ let divTextosPlanetas = [
         <p><span class="font-bold">Superficie:</span> Gaseosa.</p>
     </div>
     </div>
-    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
-        <img src="${ImagenesPlanetaSizes[7]}" class="md:h-[45vh] mx-auto" alt="tamano">
+    <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
+        <img src="${ImagenesPlanetaSizes[7]}" class="md:h-[45vh] sm:h-[40vh] mx-auto" alt="tamano">
     </div>
     <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
         <img src="${ImagenesPlanetaOrbita[7]}" alt="tamano">
     </div>
-    <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+    <div class="sabias text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-center  text-lg lg:text-lg md:text-base sm:text-sm">
         <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Neptuno</div>-->
         <hr>
         
-        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center ">
+        <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center sm:h-fit">
              <p><span class="text-red-900 font-extrabold ">¿SABIAS QUE?</span></p>
             <ul class="list-disc">
             <li><p>Urano fue el primer planeta descubierto mediante un telescopio.</p></li>
@@ -526,10 +526,10 @@ let divTextosPlanetas = [
 </div>
 <div class="w-[100%] h-full">
     <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Urano','informacion-completa')">Información</div>
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Urano','tamano')">Tamaño</div>
-                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Urano','orbita')">Órbita</div>-->
-                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Urano','sabias')">¿Sabias Que?</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Urano','informacion-completa')">Información</div>
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Urano','tamano')">Tamaño</div>
+                <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Urano','orbita')">Órbita</div>-->
+                <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Urano','sabias')">¿Sabias Que?</div>
     </div>
     </div>
 </div>
@@ -537,13 +537,13 @@ let divTextosPlanetas = [
     `<div class="flex flex-col items-center content-center justify-center"><!-- Neptuno -->
   
     <div id="Neptuno" >
-        <div class="informacion-completa  w-[100%] h-auto grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
+        <div class="informacion-completa   w-[100%] lg:h-[54vh] md:h-[45vh] sm:h-fit grid   grid-cols-[1fr_2fr] sm:grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] items-center content-center justify-center">
         <div class="NeptunoVideo animate__animated animate__fadeIn">
             <video  class=" w-full aspect-auto md:aspect-video lg:aspect-auto"  id="video-animacion-mobile" class="responsive"  preload autoplay loop="true" >
                 <source src="${videosPlanetasRuta[8]}" type="video/mp4">
             </video>
         </div>
-        <div class="informacion animate__animated informacion animate__animated animate__fadeIn grow p-8 w-[100%] h-fit text-lg lg:text-base md:text-xs sm:text-xs xs:text-xs">
+        <div class="informacion animate__animated animate__fadeIn grow lg:p-8 md:p-2 sm:p-2 w-[100%] h-[54vh] sm:h-fit text-lg lg:text-base md:text-base sm:text-sm xs:text-sm">
             <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Neptuno</div>
             <hr>
             <p><span class="font-bold">Tamaño (diámetro):</span> 49,528 km</p>
@@ -557,17 +557,17 @@ let divTextosPlanetas = [
             <p><span class="font-bold">Superficie:</span> Gaseosa, con tormentas y vientos que alcanzan los 2,000 km/hora.</p>
         </div>
         </div>
-        <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
-            <img src="${ImagenesPlanetaSizes[8]}" class="md:h-[45vh] mx-auto" alt="tamano">
+        <div class="tamano animate__animated animate__fadeIn  hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
+            <img src="${ImagenesPlanetaSizes[8]}" class="md:h-[45vh] sm:h-[40vh] mx-auto" alt="tamano">
         </div>
-        <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-start">
+        <div class="orbita animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-start">
             <img src="${ImagenesPlanetaOrbita[8]}" alt="tamano">
         </div>
-        <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] flex flex-col items-center content-center justify-center text-lg lg:text-lg md:text-base">
+        <div class="sabias  text-base animate__animated animate__fadeIn hidden w-[100%] h-[54vh] lg:h-[54vh] sm:h-fit flex flex-col items-center content-center justify-center  text-lg lg:text-lg md:text-base sm:text-sm">
             <!-- <div class="text-cyan-900 mx-auto text-lg lg:text-2xl  md:text-sm text-center font-extrabold w-full">Neptuno</div>-->
             <hr>
             
-            <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center ">
+            <div class="w-[50vw] h-80 mx-auto text-left flex flex-col items-center content-center justify-center  sm:h-fit">
                  <p><span class="text-red-900 font-extrabold ">¿SABIAS QUE?</span></p>
                 <ul class="list-disc">
                 <li><p>Neptuno fue el primer planeta descubierto al predecir su existencia por cálculos.</p></li>
@@ -581,10 +581,10 @@ let divTextosPlanetas = [
     </div>
     <div class="w-[100%] h-full">
         <div class="w-[100%] h-full p-8 nowrap flex flex-row  gap-2 items-center justify-between content-center">
-                    <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Neptuno','informacion-completa')">Información</div>
-                    <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Neptuno','tamano')">Tamaño</div>
-                    <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Neptuno','orbita')">Órbita</div>-->
-                    <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Neptuno','sabias')">¿Sabias Que?</div>
+                    <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Neptuno','informacion-completa')">Información</div>
+                    <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Neptuno','tamano')">Tamaño</div>
+                    <!--<div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Neptuno','orbita')">Órbita</div>-->
+                    <div class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  md:text-sm sm:text-sm text-center grow basis-1/4 cursor-pointer" onclick="ocultar('Neptuno','sabias')">¿Sabias Que?</div>
         </div>
         </div>
     </div>
@@ -595,7 +595,7 @@ let divTextosPlanetas = [
 
 
 function init() {
-    
+
     document.querySelector('#data').style.display = 'none'
 
     const selectElement = document.querySelector('#velociad-translacion');
@@ -612,7 +612,7 @@ function init() {
         $("body").toggleClass("view-3D view-2D");
         document.querySelector('.simulador-seleccion').style.display = 'block'
 
-       
+
         ReiniciarGalaxia()
 
 
@@ -623,13 +623,13 @@ function init() {
         }
     });
 
-  
+
 
 
 
     selectElement.addEventListener('change', (event) => {
-        
-        
+
+
 
         //ocultando info
         document.querySelector('#neptune  .infos').style.display = 'none'
@@ -647,27 +647,27 @@ function init() {
                 //rotacion
 
                 //tierra
-                
-                
+
+
                 document.querySelector('#earth .planet').style.animationDuration = '0.2s'
 
 
                 //mart
-                
+
                 document.querySelector('#mars .planet').style.animationDuration = '0.8s'
 
 
                 //jupiter
-               
+
                 document.querySelector('#jupiter .planet').style.animationDuration = '1.9s'
                 //saturn
-               
+
                 document.querySelector('#saturn .planet').style.animationDuration = '2s'
                 //uranus
-               
+
                 document.querySelector('#uranus .planet').style.animationDuration = '1s'
                 //neptune
-                
+
                 document.querySelector('#neptune .planet').style.animationDuration = '1.5s'
 
 
@@ -685,26 +685,26 @@ function init() {
                 //rotacion
 
                 //tierra
-        
+
                 document.querySelector('#earth .planet').style.animationDuration = '0.2s'
 
 
                 //mart
-               
+
                 document.querySelector('#mars .planet').style.animationDuration = '1.5s'
 
 
                 //jupiter
-                
+
                 document.querySelector('#jupiter .planet').style.animationDuration = '1.9s'
                 //saturn
-              
+
                 document.querySelector('#saturn .planet').style.animationDuration = '2s'
                 //uranus
-             
+
                 document.querySelector('#uranus .planet').style.animationDuration = '1s'
                 //neptune
-               
+
                 document.querySelector('#neptune .planet').style.animationDuration = '1.5s'
 
 
@@ -725,26 +725,26 @@ function init() {
                 //rotacion
 
                 //tierra
-                
+
                 document.querySelector('#earth .planet').style.animationDuration = '0.2s'
 
 
                 //mart
-                
+
                 document.querySelector('#mars .planet').style.animationDuration = '0.8s'
 
 
                 //jupiter
-                
+
                 document.querySelector('#jupiter .planet').style.animationDuration = '1.9s'
                 //saturn
-                
+
                 document.querySelector('#saturn .planet').style.animationDuration = '2s'
                 //uranus
-                
+
                 document.querySelector('#uranus .planet').style.animationDuration = '1s'
                 //neptune
-                
+
                 document.querySelector('#neptune .planet').style.animationDuration = '1.5s'
 
 
@@ -759,26 +759,26 @@ function init() {
                 //rotacion
 
                 //tierra
-                
+
                 document.querySelector('#earth .planet').style.animationDuration = '0.8s'
 
 
                 //mart
-                
+
                 document.querySelector('#mars .planet').style.animationDuration = '0.8s'
 
 
                 //jupiter
-               
+
                 document.querySelector('#jupiter .planet').style.animationDuration = '1.9s'
                 //saturn
-               
+
                 document.querySelector('#saturn .planet').style.animationDuration = '2s'
                 //uranus
-              
+
                 document.querySelector('#uranus .planet').style.animationDuration = '1s'
                 //neptune
-               
+
                 document.querySelector('#neptune .planet').style.animationDuration = '1.5s'
 
 
@@ -798,21 +798,21 @@ function init() {
                 //rotacion
 
                 //mart
-               
+
                 document.querySelector('#mars .planet').style.animationDuration = '0.8s'
 
 
                 //jupiter
-               
+
                 document.querySelector('#jupiter .planet').style.animationDuration = '1.9s'
                 //saturn
-            
+
                 document.querySelector('#saturn .planet').style.animationDuration = '2s'
                 //uranus
-                
+
                 document.querySelector('#uranus .planet').style.animationDuration = '1s'
                 //neptune
-              
+
                 document.querySelector('#neptune .planet').style.animationDuration = '1.5s'
 
 
@@ -832,21 +832,21 @@ function init() {
                 //rotacion
 
                 //mart
-               
+
                 document.querySelector('#mars .planet').style.animationDuration = '0.8s'
 
 
                 //jupiter
- 
+
                 document.querySelector('#jupiter .planet').style.animationDuration = '1.9s'
                 //saturn
-               
+
                 document.querySelector('#saturn .planet').style.animationDuration = '2s'
                 //uranus
-           
+
                 document.querySelector('#uranus .planet').style.animationDuration = '1s'
                 //neptune
-                
+
                 document.querySelector('#neptune .planet').style.animationDuration = '1.5s'
                 document.querySelector('#neptune .infos').style.display = 'none'
 
@@ -865,21 +865,21 @@ function init() {
                 //rotacion
 
                 //mart
-         
+
                 document.querySelector('#mars .planet').style.animationDuration = '0.8s'
 
 
                 //jupiter
-         
+
                 document.querySelector('#jupiter .planet').style.animationDuration = '0.8s'
                 //saturn
-              
+
                 document.querySelector('#saturn .planet').style.animationDuration = '0.8s'
                 //uranus
-              
+
                 document.querySelector('#uranus .planet').style.animationDuration = '1s'
                 //neptune
-                
+
                 document.querySelector('#neptune .planet').style.animationDuration = '0.5s'
 
 
@@ -915,11 +915,11 @@ function init() {
             opacity: 1, scaleX: 1, scaleY: 1, duration: 0.5, ease: Linear.easeInOut, stagger: 0.2, onComplete: () => {
                 document.querySelector('.contenedor-actividad').innerHTML = `
                 <div id="instrucciones">
-    <div class=" h-fit w-90 md:w-fit sm:h-fit md:h-fit sm:w-[100vw] mx-auto sm:mx-auto  md:overflow lg:p-20 md:overflow-hidden md:p-2 sm:p-2">
-      <h1 class="text-2xl lg:text-2xl  md:text-2xl sm:text-xs text-cyan-900 mb-4">INSTRUCCIONES</h1>
+    <div class=" h-fit w-90 sm:w-100% md:w-fit sm:h-fit md:h-fit  mx-auto sm:mx-auto  md:overflow lg:p-20 md:overflow-hidden md:p-2 sm:p-2">
+      <h1 class="text-2xl lg:text-2xl  md:text-2xl sm:text-ms text-cyan-900 mb-4">INSTRUCCIONES</h1>
       <hr class=" w-20 mx-auto mb-3">
-      <p class="text-justify text-base lg:text-lg md:text-sm sm:text-xs">Vamos a explorar nuestro sistema solar y nuestro planeta tierra, Haz clic en cualquiera de los planetas que se encuentrar en la parte inferior para ingresar a su ficha descriptiva. Puedes seleccionar también los botones de tamaño y distancia para conocer más sobre estos temas.</p>
-      <div class="w-40  mx-auto   mt-20 md:mt-6">
+      <p class="text-justify text-base lg:text-lg md:text-sm sm:text-sm xs:text-xs">Vamos a explorar nuestro sistema solar y nuestro planeta tierra, Haz clic en cualquiera de los planetas que se encuentrar en la parte inferior para ingresar a su ficha descriptiva. Puedes seleccionar también los botones de tamaño y distancia para conocer más sobre estos temas.</p>
+      <div class="w-40  mx-auto   mt-20 md:mt-6 sm:mt-4">
         <div
           class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg lg:text-lg  md:text-sm text-center grow basis-1/4 cursor-pointer hover:transform-scale-1"
           onclick="siguienteInicio()">Siguiente</div>
@@ -932,15 +932,15 @@ function init() {
       <h1 class="text-2xl text-cyan-900 mb-4">SISTEMA SOLAR</h1>
       <hr class=" w-20 mx-auto mb-3">
       <div class="contendor-video mx-auto  w-full  h-20 lg:h-80 md:h-40  mb-[16px] text-center">
-        <video id="video-sistema" preload class="h-20 lg:h-80 mx-auto mt-2">
+        <video id="video-sistema" preload controls class="h-20 lg:h-80 mx-auto mt-2">
           <source src="./assets/videos/origen_sist_solar.mp4" type="video/mp4">
           <source src="./assets/videos/origen_sist_solar.ogg" type="video/ogg">
 
         </video>
       </div>
-      <div class="w-80 mx-auto mt-6 grid grid-cols-2 place-items-center">
+      <div class="w-80 mx-auto mt-6 grid grid-cols-1  lg:grid-cols-1  md:grid-cols-2  sm:grid-cols-2 place-items-center">
         <div
-          class="animate__animated animate__fadeInUp  bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  lg:text-lg md:text-sm text-center grow basis-1/4 cursor-pointer hover:transform-scale-1"
+          class="animate__animated animate__fadeInUp  lg:hidden md:visible sm:visible bg-cyan-900 hover:bg-cyan-600 p-2 text-white text-lg  lg:text-lg md:text-sm text-center grow basis-1/4 cursor-pointer hover:transform-scale-1"
           onclick="verVideoSistema()">Ver video
         </div>
         <div
@@ -958,7 +958,7 @@ function init() {
 
 }
 
-function ReiniciarGalaxia(){
+function ReiniciarGalaxia() {
     const selectElement = document.querySelector('#velociad-translacion');
     let stylesMapaMercurioOrbit = document.querySelector(`#mercury.orbit`).style
     let stylesMapaVenusOrbit = document.querySelector(`#venus.orbit`).style
@@ -969,8 +969,8 @@ function ReiniciarGalaxia(){
     let stylesMapaUranoOrbit = document.querySelector(`#uranus.orbit`).style
     let stylesMapaNeptunoOrbit = document.querySelector(`#neptune.orbit`).style
 
-    if(changeView){
-           
+    if (changeView) {
+
         //Animation Rotation
         document.querySelector('#earth .planet').style.animationName = 'shadow-earth-rotation'
         document.querySelector('#mars .planet').style.animationName = 'shadow-mars-rotation'
@@ -979,73 +979,73 @@ function ReiniciarGalaxia(){
         document.querySelector('#uranus .planet').style.animationName = 'shadow-uranus-rotation'
         document.querySelector('#neptune .planet').style.animationName = 'shadow-neptune-rotation'
 
-        changeView=!changeView
-   }else{
-       document.querySelector('#earth .planet').style.animationName = 'shadow-earth'
-       document.querySelector('#mars .planet').style.animationName = 'shadow-mars'
-       document.querySelector('#jupiter .planet').style.animationName = 'shadow-jupiter'
-       document.querySelector('#saturn .planet').style.animationName = 'shadow-saturn'
-       document.querySelector('#uranus .planet').style.animationName = 'shadow-uranus'
-       document.querySelector('#neptune .planet').style.animationName = 'shadow-neptune'
+        changeView = !changeView
+    } else {
+        document.querySelector('#earth .planet').style.animationName = 'shadow-earth'
+        document.querySelector('#mars .planet').style.animationName = 'shadow-mars'
+        document.querySelector('#jupiter .planet').style.animationName = 'shadow-jupiter'
+        document.querySelector('#saturn .planet').style.animationName = 'shadow-saturn'
+        document.querySelector('#uranus .planet').style.animationName = 'shadow-uranus'
+        document.querySelector('#neptune .planet').style.animationName = 'shadow-neptune'
 
-       //Reiniciamos la velocidad de las orbitas
+        //Reiniciamos la velocidad de las orbitas
 
-       stylesMapaVenusOrbit.setProperty('--rotacion-venus', '2.89016s')
-       stylesMapaMercurioOrbit.setProperty('--rotacion-mercurio', '7.38237s')
-       stylesMapaTierraOrbit.setProperty('--rotacion-earth', '12.00021s')
-       stylesMapaMarteOrbit.setProperty('--rotacion-marte', '22.57017s')
-       stylesMapaJupiterOrbit.setProperty('--rotacion-jupiter', '22.57017s')
-       stylesMapaSaturnoOrbit.setProperty('--rotacion-saturno', '353.36998s')
-       stylesMapaUranoOrbit.setProperty('--rotacion-urano', '1008.20215s')
-       stylesMapaNeptunoOrbit.setProperty('--rotacion-neptuno', '1977.49584s')
+        stylesMapaVenusOrbit.setProperty('--rotacion-venus', '2.89016s')
+        stylesMapaMercurioOrbit.setProperty('--rotacion-mercurio', '7.38237s')
+        stylesMapaTierraOrbit.setProperty('--rotacion-earth', '12.00021s')
+        stylesMapaMarteOrbit.setProperty('--rotacion-marte', '22.57017s')
+        stylesMapaJupiterOrbit.setProperty('--rotacion-jupiter', '22.57017s')
+        stylesMapaSaturnoOrbit.setProperty('--rotacion-saturno', '353.36998s')
+        stylesMapaUranoOrbit.setProperty('--rotacion-urano', '1008.20215s')
+        stylesMapaNeptunoOrbit.setProperty('--rotacion-neptuno', '1977.49584s')
 
-         //rotacion
+        //rotacion
 
-           //tierra
-           
-           
-           document.querySelector('#earth .planet').style.animationDuration = 'initial'
+        //tierra
 
 
-           //mart
-           
-           document.querySelector('#mars .planet').style.animationDuration = 'initial'
+        document.querySelector('#earth .planet').style.animationDuration = 'initial'
 
 
-           //jupiter
-          
-           document.querySelector('#jupiter .planet').style.animationDuration = 'initial'
-           //saturn
-          
-           document.querySelector('#saturn .planet').style.animationDuration = 'initial'
-           //uranus
-          
-           document.querySelector('#uranus .planet').style.animationDuration = 'initial'
-           //neptune
-           
-           document.querySelector('#neptune .planet').style.animationDuration = 'initial'
-           document.querySelector('.simulador-seleccion').style.display = 'none'
-       changeView=!changeView
+        //mart
 
-        
-   }
+        document.querySelector('#mars .planet').style.animationDuration = 'initial'
+
+
+        //jupiter
+
+        document.querySelector('#jupiter .planet').style.animationDuration = 'initial'
+        //saturn
+
+        document.querySelector('#saturn .planet').style.animationDuration = 'initial'
+        //uranus
+
+        document.querySelector('#uranus .planet').style.animationDuration = 'initial'
+        //neptune
+
+        document.querySelector('#neptune .planet').style.animationDuration = 'initial'
+        document.querySelector('.simulador-seleccion').style.display = 'none'
+        changeView = !changeView
+
+
+    }
 }
 
-function siguienteInicio(){
-    document.querySelector('#instrucciones').style.display='none'
-    document.querySelector('#introvideo').style.display='block'
+function siguienteInicio() {
+    document.querySelector('#instrucciones').style.display = 'none'
+    document.querySelector('#introvideo').style.display = 'block'
 }
 
 
-function MostrarInfoLuna(){
-    let infoluna= `
+function MostrarInfoLuna() {
+    let infoluna = `
    
     `
 }
 
 function cerrarSimuladorOpcion() {
     document.querySelector('.simulador-seleccion').style.display = 'none'
-    changeView=false
+    changeView = false
     ReiniciarGalaxia()
 }
 
@@ -1055,12 +1055,12 @@ function verVideoSistema() {
     if (!isMobile) {
         videoInicio = document.querySelector('#video-sistema')
         videoInicio.play()
-    }else{
-        videoInicioMobile=document.querySelector('#video-animacion-mobile')
+    } else {
+        videoInicioMobile = document.querySelector('#video-animacion-mobile')
         MostrarVideo()
         videoInicioMobile.play()
     }
-   
+
 }
 
 function mostrarContenido(planetaN) {
@@ -1090,7 +1090,17 @@ function ocultarVentana() {
     if (videoInicio != null) {
         videoInicio.pause()
     }
-    document.querySelector('#data').style.display = 'block'
+
+
+    let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (!isMobile) {
+        document.querySelector('#data').style.display = 'block'
+    } else {
+        document.querySelector('#navbar').classList.remove('hidden')
+    }
+
+
 
 
     gsap.fromTo(document.querySelector('.contenido-actividad-bienvenida'), { opacity: 1, scaleX: 1, scaleY: 1, transformOrigin: "50% 50%" }, {
@@ -1109,12 +1119,13 @@ function ocultarVentana() {
 } */
 
 function ocultar(menu, submenu) {
-    
 
-    if(submenu=='luna'){
+
+    if (submenu == 'luna') {
         document.querySelector(`#infoTierra`).classList.add('hidden')
         document.querySelector(`#Luna`).classList.remove('hidden')
-        
+        document.querySelector(`#luna`).classList.remove('hidden')
+
     }
 
     //Ocultamos las demas
@@ -1125,17 +1136,18 @@ function ocultar(menu, submenu) {
     document.querySelector(`#${menu} .sabias`).classList.add('hidden')
 
 
-    if(submenu!='luna'){
+    if (submenu != 'luna') {
         document.querySelector(`#${menu} .${submenu}`).classList.toggle('hidden')
-    }   
-    
+    }
+
 
 }
 
-function VolverTierra(){
+function VolverTierra() {
     document.querySelector(`#infoTierra`).classList.remove('hidden')
     document.querySelector(`#Tierra .informacion-completa`).classList.remove('hidden')
     document.querySelector(`#Luna`).classList.add('hidden')
+    document.querySelector(`#luna`).classList.add('hidden')
 }
 
 
@@ -1157,13 +1169,13 @@ function ocultarModal() {
 // When the user clicks anywhere outside of the modal, close it
 function ocultarModalVentana(event) {
     if (event.target == modal) {
-        if(videoInicio!= null){
+        if (videoInicio != null) {
             videoInicio.currentTime = 0
             videoInicio.pause()
-         
+
         }
         videoInicioMobile.currentTime = 0
-        
+
         videoInicioMobile.pause()
         modal.style.display = "none";
 
@@ -1175,11 +1187,11 @@ function MostrarVideo() {
 }
 
 function OcultarVideo() {
-    if(videoInicio!=null){
+    if (videoInicio != null) {
         videoInicio.currentTime = 0
         videoInicio.pause()
     }
-   
+
 
     videoInicioMobile.currentTime = 0
     videoInicioMobile.pause()
